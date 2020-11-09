@@ -1,0 +1,8 @@
+{
+    "name": "SSLsplit",
+    "title": "SSL Split",
+    "description": "An MVII module aimed at performing MiTM henticating clients",
+    "version": "1.0",
+    "author": "Father Stalin"
+}
+

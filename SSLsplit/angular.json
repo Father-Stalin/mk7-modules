@@ -1,0 +1,47 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "SSLsplit": {
+            "projectType": "library",
+            "root": "projects/SSLsplit",
+            "sourceRoot": "projects/SSLsplit/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "projects/SSLsplit/tsconfig.lib.json",
+                        "project": "projects/SSLsplit/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/SSLsplit/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/SSLsplit/src/test.ts",
+                        "tsConfig": "projects/SSLsplit/tsconfig.spec.json",
+                        "karmaConfig": "projects/SSLsplit/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/SSLsplit/tsconfig.lib.json",
+                            "projects/SSLsplit/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
+        }},
+    "defaultProject": "SSLsplit"
+}
