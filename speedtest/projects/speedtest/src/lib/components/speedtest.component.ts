@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from './helpers/error-dialog/error-dialog.component';
+import { ControlState } from '../interfaces/controlstate.interface';
 
 @Component({
     selector: 'lib-speedtest',
@@ -11,6 +12,7 @@ import { ErrorDialogComponent } from './helpers/error-dialog/error-dialog.compon
 // tslint:disable-next-line:class-name
 export class speedtestComponent implements OnInit {
     constructor(private API: ApiService, private dialog: MatDialog) { }
+    public controlState: ControlState = { isBusy: false, running: false};
     internetSpeed = '--MB downloaded @ --.--MB/s';
 
     private handleError(msg: string): void {
@@ -30,6 +32,7 @@ export class speedtestComponent implements OnInit {
         }, (response) => {
             if (response.error !== undefined){
                 this.handleError(response.error)
+                return;
             }
         })
     }
@@ -41,8 +44,6 @@ export class speedtestComponent implements OnInit {
             this.internetSpeed = response;
         })
     }
-
-
     ngOnInit() {
     }
 }
