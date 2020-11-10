@@ -1,0 +1,11 @@
+
+/* color the class of buttons raised for disabling and enabling*/
+
+.notEnabled {
+    color: blue;
+
+}
+.isEnabled {
+    color: red;
+
+}
