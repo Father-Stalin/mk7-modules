@@ -1,6 +1,9 @@
 <mat-card>
-    <mat-card-title>Welcome to speedtest</mat-card-title>
+    <mat-card-title>Speed Test</mat-card-title>
     <mat-card-content>
-        This is the example module.
+        <button mat-flat-button color="accent" (click)="runSpeedTest();">Run test (50MB; HTTP)</button>
+        <br/>
+        <span>{{ apiResponse }}</span>
+        <br/>
     </mat-card-content>
 </mat-card>
