@@ -32,7 +32,15 @@ export class SSLsplitComponent implements OnInit {
 	        if (response.error !== undefined) {
 	            this.apiResponse = response.error;
             }
-        });
+        })
+    }
+    getDeviceName(): void {
+	    this.API.request({
+            module: 'SSLsplit',
+            action: 'get_device'
+        }, (response) => {
+	        this.apiResponse = response;
+        })
     }
 
     ngOnInit(): void {

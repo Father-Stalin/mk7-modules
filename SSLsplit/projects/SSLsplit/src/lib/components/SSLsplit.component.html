@@ -5,10 +5,17 @@
                 <mat-card-title>SSL Split</mat-card-title>
                 <span fxFlex></span>
             </div>
-            <br/><mat-divider></mat-divider><br/>
-                <button mat-raised-button color="accent">Start</button>
-                <button mat-raised-button color="warn">Stop</button>
-            <br/><br/>
-	</mat-card-content>
-</mat-card>
-
+                <br/><mat-divider></mat-divider><br/>
+                    <button mat-raised-button color="accent">Start</button>
+                    <button mat-raised-button color="warn">Stop</button>
+                <br/><br/>
+	        </mat-card-content>
+    </mat-card>
+    <mat-card class="debug">
+        <mat-card-content>
+            <button mat-flat-button color="accent" (click)="getDeviceName();">Device Name</button>
+            <br/>
+            <span>Device Name: {{ apiResponse }}</span>
+            <br/>
+        </mat-card-content>
+    </mat-card>
