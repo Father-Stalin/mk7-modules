@@ -7,7 +7,6 @@ import subprocess
 from pineapple.modules import Module, Request
 
 module = Module('speedtest',logging.DEBUG)
-filename = ''
 
 @module.handles_action('run_test')
 def run_test(request: Request):
@@ -18,7 +17,6 @@ def run_test(request: Request):
     duration = time.time() - startTime
     duration = round(duration,4)
     rate = 50 / duration
-
     return f"50MB downloaded @ {round(rate, 2)}MB/s"
 
 if __name__ == '__main__':
