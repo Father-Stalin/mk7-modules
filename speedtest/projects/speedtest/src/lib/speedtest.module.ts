@@ -8,6 +8,7 @@ import {MaterialModule} from './modules/material/material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {FormsModule} from '@angular/forms';
+import {ErrorDialogComponent} from './components/helpers/error-dialog/error-dialog.component';
 
 const routes: Routes = [
     { path: '', component: speedtestComponent }
@@ -22,6 +23,9 @@ const routes: Routes = [
         FlexLayoutModule,
         FormsModule,
     ],
-    exports: [speedtestComponent]
+    exports: [speedtestComponent],
+    entryComponents: [
+        ErrorDialogComponent
+    ]
 })
 export class speedtestModule { }
