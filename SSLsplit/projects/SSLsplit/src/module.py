@@ -12,7 +12,7 @@ import pineapple.helpers.opkg_helpers as opkg
 module = Module("SSLsplit", logging.DEBUG)
 manager = JobManager("SSLsplit", log_level=logging.DEBUG, module=module)
 
-_DEPENDENCIES = ["openssl", "iptables", "nginx"]
+_DEPENDENCIES = ["iptables", "nginx", "python3-pip"]
 @module.handles_action("hello_world")
 def check_dependencies(request: Request):
 	return f"You said: {request.user_input}"
