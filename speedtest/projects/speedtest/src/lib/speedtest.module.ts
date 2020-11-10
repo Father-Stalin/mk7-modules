@@ -15,7 +15,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [speedtestComponent],
+    declarations: [
+        speedtestComponent,
+        ErrorDialogComponent
+    ],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
@@ -28,4 +31,5 @@ const routes: Routes = [
         ErrorDialogComponent
     ]
 })
+// tslint:disable-next-line:class-name
 export class speedtestModule { }
