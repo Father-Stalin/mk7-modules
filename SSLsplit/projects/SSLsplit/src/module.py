@@ -21,7 +21,7 @@ def check_dependencies(request: Request):
 def get_device(request: Request):
     getNameCommand = "cat /proc/cpuinfo | grep machine | awk -F ': ' '{print $2}'"
     process = subprocess.Popen(getNameCommand, stdout=subprocess.PIPE, stderr=None, shell=True)
-    output = process.communicate()[0].strip()
+    output = process.communicate()[0].strip().decode()
     return output
 
 if __name__ == "__main__":
